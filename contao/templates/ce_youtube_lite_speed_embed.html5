@@ -1,0 +1,53 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+    <style>
+        lite-youtube {
+            <?php if(!empty($this->width)): ?>width: <?= $this->width ?>;<?php endif; ?>
+            <?php if(!empty($this->height)): ?>height: <?= $this->height ?>;<?php endif; ?>
+            <?php if(!empty($this->aspect)): ?>--lite-youtube-aspect-ratio: <?= $this->aspect ?>;<?php endif; ?>
+            --lite-youtube-frame-shadow-visible: no;
+        }
+    </style>
+    <figure class="video_container  test">
+        <?php if ($this->aspect): ?>
+            <div class="responsive ratio-<?= $this->aspect ?>">
+        <?php endif; ?>
+
+            <lite-youtube
+                class="youtubelitespeedembed"
+                posterquality="maxresdefault"
+                videoid="<?= $this->youtube ?>"
+                <?php if(!empty($this->video_title)): ?>
+                    videotitle="<?= $this->video_title ?>"
+                <?php endif; ?>
+                <?php if(!empty($this->playerStart)): ?>
+                    videoStartAt="<?= $this->playerStart ?>"
+                <?php endif; ?>
+                <?php if(!empty($this->autopause)): ?>
+                    autopause
+                <?php endif; ?>
+                <?php if(!empty($this->params)): ?>
+                    <?= $this->params ?>
+                <?php endif; ?>
+            >
+                <!-- Fallback for browsers that don't support the <lite-youtube> element -->
+                <a class="lite-youtube-fallback" href="<?= $this->src ?>">Watch on YouTube</a>
+                <?php if ($this->splash_image): ?>
+                    <img slot="image" src="<?= $this->splash_image ?>" alt="YouTube Video <?= $this->video_title ?>" />
+                <?php endif; ?>
+            </lite-youtube>
+
+        <?php if ($this->aspect): ?>
+            </div>
+        <?php endif; ?>
+        <?php if ($this->playerCaption): ?>
+            <figcaption class="caption"><?= $this->playerCaption ?></figcaption>
+        <?php endif; ?>
+    </figure>
+
+<?php $this->endblock(); ?>
+
+<?php
+
+#this->addCspSource('frame-src', $this->src);

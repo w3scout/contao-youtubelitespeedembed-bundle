@@ -1,0 +1,31 @@
+{
+    "name": "contao-youtubelitespeedembed-bundle",
+    "version": "1.0.0",
+    "description": "This bundle implements the lite-youtube library, a web component that renders YouTube embeds faster.",
+    "main": "index.js",
+    "scripts": {
+        "dev-server": "encore dev-server --port 3000",
+        "dev": "encore dev --progress --profile",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress --profile"
+    },
+    "author": "Darko Selesi",
+    "license": "MIT",
+    "dependencies": {
+        "@justinribeiro/lite-youtube": "^1.8.1",
+        "core-js": "^3.40.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.26.10",
+        "@babel/preset-env": "^7.24.7",
+        "@symfony/webpack-encore": "^4.6.1",
+        "browserlist": "^1.0.1",
+        "file-loader": "^6.2.0",
+        "prettier": "3.5.0",
+        "sass": "^1.77.4",
+        "sass-loader": "^14.2.1",
+        "webpack": "^5.94.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-notifier": "^1.15.0"
+    }
+}

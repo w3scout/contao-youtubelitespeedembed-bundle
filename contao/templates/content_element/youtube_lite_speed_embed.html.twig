@@ -1,0 +1,64 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+
+<style>
+    lite-youtube {
+        {% if width is not empty %}width: {{ width }};{% endif %}
+        {% if height is not empty %}height: {{ height }};{% endif %}
+        {% if aspect is not empty %}--lite-youtube-aspect-ratio: {{ aspect }};{% endif %}
+        --lite-youtube-frame-shadow-visible: no;
+    }
+</style>
+
+<figure class="video_container">
+    {% if aspect %}
+        <div class="responsive ratio-{{ aspect }}">
+    {% endif %}
+
+        <lite-youtube
+            class="youtubelitespeedembed"
+            posterquality="maxresdefault"
+            videoid="{{ youtube }}"
+            {% if video_title is not empty %}
+                videotitle="{{ video_title }}"
+            {% endif %}
+            {% if playerStart is not empty %}
+                videoStartAt="{{ playerStart }}"
+            {% endif %}
+            {% if autopause is not empty %}
+            autopause
+            {% endif %}
+            {% if params is not empty %}
+            {{ params }}
+            {% endif %}
+        >
+        <!-- Fallback for browsers that don't support the <lite-youtube> element -->
+        <a class="lite-youtube-fallback" href="{{ src }}">Watch on YouTube</a>
+        {% if splash_image is not empty %}
+        <img slot="image" src="{{ splash_image }}" alt="YouTube Video {{ video_title }}" />
+        {% endif %}
+        </lite-youtube>
+
+        {% if aspect %}
+    </div>
+    {% endif %}
+
+    {% if playerCaption is not empty %}
+    <figcaption class="caption">{{ playerCaption }}</figcaption>
+    {% endif %}
+</figure>
+
+{% endblock %}
+
+{#{% do addCspSource('frame-src', src) %}#}
+{#{% do this.addCspSource('frame-src', youtube) %}#}
+{#{% do this.addCspSource('frame-src', splash_image) %}#}
+{#{% do this.addCspSource('frame-src', video_title) %}#}
+{#{% do this.addCspSource('frame-src', videoPlayerStart) %}#}
+{#{% do this.addCspSource('frame-src', autopause) %}#}
+{#{% do this.addCspSource('frame-src', params) %}#}
+{#{% do this.addCspSource('frame-src', videoPlayerCaption) %}#}
+{#{% do this.addCspSource('frame-src', aspect) %}#}
+{#{% do this.addCspSource('frame-src', width) %}#}
+{#{% do this.addCspSource('frame-src', height) %}#}

@@ -1,0 +1,53 @@
+{
+    "name": "w3scout/contao-youtubelitespeedembed-bundle",
+    "description": "A lightweight, performance-focused YouTube embed element that drastically reduces page weight and load time.",
+    "keywords": [
+        "contao",
+        "bundle",
+        "content element",
+        "youtube",
+        "video",
+        "media"
+    ],
+    "type": "contao-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Darko Selesi",
+            "email": "hallo@w3scouts.com",
+            "homepage": "https://w3scouts.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/w3scout/contao-youtubelitespeedembed-bundle/issues",
+        "source": "https://github.com/w3scout/contao-youtubelitespeedembed-bundle"
+    },
+    "require": {
+        "php": "^8.3",
+        "contao/core-bundle": "^4.13 || ^5.3"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "W3Scout\\ContaoYoutubelitespeedembedBundle\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": false,
+            "contao/manager-plugin": false,
+            "contao-community-alliance/composer-plugin": true
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "W3Scout\\ContaoYoutubelitespeedembedBundle\\ContaoManager\\Plugin"
+    },
+    "scripts": {
+        "cs-fixer": "@php tools/ecs/vendor/bin/ecs check config/ contao/ src/ templates/ tests/ --config tools/ecs/config.php --fix --ansi",
+        "unit-tests": "@php tools/phpunit/vendor/bin/phpunit -c tools/phpunit/phpunit.xml.dist"
+    },
+    "version": "1.0.0"
+}
