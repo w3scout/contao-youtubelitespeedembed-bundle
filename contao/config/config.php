@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of Contao-YoutubeLiteSpeedEmbed-Bundle.
  *
@@ -9,3 +11,7 @@
  * please view the LICENSE file that was distributed with this source code.
  * @link https://github.com/w3scout/contao-youtubeliteembed-bundle
  */
+
+use W3Scout\ContaoYoutubelitespeedembedBundle\Widget\YoutubeLiteSpeedEmbedWidget;
+
+$GLOBALS['BE_FFL']['youtubeLiteSpeedEmbed'] = YoutubeLiteSpeedEmbedWidget::class;
