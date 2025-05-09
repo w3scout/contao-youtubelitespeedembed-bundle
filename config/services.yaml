@@ -12,9 +12,3 @@ services:
     W3Scout\ContaoYoutubelitespeedembedBundle\:
         resource: ../src/
         exclude: ../src/{DependencyInjection,Model,Session}
-
-    # Add widget as service
-    W3Scout\ContaoYoutubelitespeedembedBundle\Widget\YoutubeLiteSpeedEmbedWidget:
-        public: true
-        tags:
-            - { name: contao.widget, widget: youtubeLiteSpeedEmbed }
