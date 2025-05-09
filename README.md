@@ -16,9 +16,6 @@ A lightweight, performance-focused YouTube embed element for Contao CMS, that dr
 
 Perfect for fast, modern websites where performance matters.
 
-### All Features:
-https://github.com/justinribeiro/lite-youtube?tab=readme-ov-file#features
-
 ### Installation:
 ```sh
 composer require w3scout/contao-youtubelitespeedembed-bundle
