@@ -88,6 +88,8 @@ class YoutubeLiteSpeedEmbedController extends AbstractContentElementController
         $options = StringUtil::deserialize($model->youtubeOptions);
         $domain = 'https://www.youtube.com';
 
+        #dump($options);
+
         if (\is_array($options))
         {
             foreach ($options as $option)
@@ -110,6 +112,7 @@ class YoutubeLiteSpeedEmbedController extends AbstractContentElementController
 
                     case 'youtube_nocookie':
                         $domain = 'https://www.youtube-nocookie.com';
+                        $template->nocookie = true;
                         break;
 
                     default:
@@ -118,17 +121,15 @@ class YoutubeLiteSpeedEmbedController extends AbstractContentElementController
             }
         }
 
-
         $url = $domain . '/embed/' . $model->youtube;
 
         if (!empty($params))
         {
             $url .= '?' . implode('&amp;', $params);
-        }
 
-        $params = sprintf('params="%s"', implode('&', $params));
-        #dump($params);exit;
-        $template->params = $params;
+            $template->params = sprintf('params="%s"', implode('&', $params));
+
+        }
 
         $template->src = $url;
 

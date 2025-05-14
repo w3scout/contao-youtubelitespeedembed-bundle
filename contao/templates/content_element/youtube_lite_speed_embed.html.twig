@@ -20,6 +20,9 @@
             class="youtubelitespeedembed"
             posterquality="maxresdefault"
             videoid="{{ youtube }}"
+            {% if nocookie is defined and nocookie  %}
+            nocookie
+            {% endif %}
             {% if video_title is not empty %}
                 videotitle="{{ video_title }}"
             {% endif %}
@@ -29,7 +32,7 @@
             {% if autopause is not empty %}
             autopause
             {% endif %}
-            {% if params is not empty %}
+            {% if params is defined and not empty %}
             {{ params }}
             {% endif %}
         >

@@ -18,6 +18,9 @@
                 class="youtubelitespeedembed"
                 posterquality="maxresdefault"
                 videoid="<?= $this->youtube ?>"
+                <?php if($this->nocookie): ?>
+                    nocookie
+                <?php endif; ?>
                 <?php if(!empty($this->video_title)): ?>
                     videotitle="<?= $this->video_title ?>"
                 <?php endif; ?>
