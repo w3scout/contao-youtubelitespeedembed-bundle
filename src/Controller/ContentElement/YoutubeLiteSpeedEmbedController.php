@@ -83,12 +83,11 @@ class YoutubeLiteSpeedEmbedController extends AbstractContentElementController
         $template->playerCaption = $model->playerCaption;
         $template->playerStart = $model->playerStart;
         $template->autopause = $model->autopause;
+        $template->autoload = $model->autoload;
 
         $params = array();
         $options = StringUtil::deserialize($model->youtubeOptions);
         $domain = 'https://www.youtube.com';
-
-        #dump($options);
 
         if (\is_array($options))
         {
@@ -126,9 +125,7 @@ class YoutubeLiteSpeedEmbedController extends AbstractContentElementController
         if (!empty($params))
         {
             $url .= '?' . implode('&amp;', $params);
-
             $template->params = sprintf('params="%s"', implode('&', $params));
-
         }
 
         $template->src = $url;

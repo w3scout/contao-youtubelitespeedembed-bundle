@@ -17,4 +17,4 @@ use W3Scout\ContaoYoutubelitespeedembedBundle\Controller\ContentElement\YoutubeL
 /**
  * Content element
  */
-$GLOBALS['TL_LANG']['CTE'][YoutubeLiteSpeedEmbedController::TYPE] = ['Youtube LiteSpeed Embed', 'Fügt ein YouTube Litespeed Video ein.'];
+$GLOBALS['TL_LANG']['CTE'][YoutubeLiteSpeedEmbedController::TYPE] = ['Youtube LiteSpeed', 'Fügt ein YouTube Litespeed Video ein.'];

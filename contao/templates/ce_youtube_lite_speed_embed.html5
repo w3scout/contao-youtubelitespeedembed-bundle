@@ -6,7 +6,7 @@
             <?php if(!empty($this->width)): ?>width: <?= $this->width ?>;<?php endif; ?>
             <?php if(!empty($this->height)): ?>height: <?= $this->height ?>;<?php endif; ?>
             <?php if(!empty($this->aspect)): ?>--lite-youtube-aspect-ratio: <?= $this->aspect ?>;<?php endif; ?>
-            --lite-youtube-frame-shadow-visible: no;
+            --lite-youtube-frame-shadow-visible: yes;
         }
     </style>
     <figure class="video_container">
@@ -29,6 +29,9 @@
                 <?php endif; ?>
                 <?php if(!empty($this->autopause)): ?>
                     autopause
+                <?php endif; ?>
+                <?php if(!empty($this->autoload)): ?>
+                    autoload
                 <?php endif; ?>
                 <?php if(!empty($this->params)): ?>
                     <?= $this->params ?>

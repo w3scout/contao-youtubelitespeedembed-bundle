@@ -13,4 +13,5 @@ declare(strict_types=1);
  */
 
 $GLOBALS['TL_LANG']['tl_content']['youtube_lite_speed_video_title'] = ['Video Title', 'Here you can specify the title of the Youtube video.'];
+$GLOBALS['TL_LANG']['tl_content']['youtube_lite_speed_autoload'] = ['Auto Load', 'Automatically load the video when it is scrolled into view.'];
 $GLOBALS['TL_LANG']['tl_content']['youtube_lite_speed_autopause'] = ['Auto Pause', 'Automatically pause the video when it is scrolled out of view.'];

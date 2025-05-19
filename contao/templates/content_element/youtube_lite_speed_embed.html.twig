@@ -32,6 +32,9 @@
             {% if autopause is not empty %}
             autopause
             {% endif %}
+            {% if autoload is not empty %}
+            autoload
+            {% endif %}
             {% if params is defined and not empty %}
             {{ params }}
             {% endif %}
