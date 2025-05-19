@@ -6,7 +6,7 @@
             <?php if(!empty($this->width)): ?>width: <?= $this->width ?>;<?php endif; ?>
             <?php if(!empty($this->height)): ?>height: <?= $this->height ?>;<?php endif; ?>
             <?php if(!empty($this->aspect)): ?>--lite-youtube-aspect-ratio: <?= $this->aspect ?>;<?php endif; ?>
-            --lite-youtube-frame-shadow-visible: yes;
+            --lite-youtube-frame-shadow-visible: no;
         }
     </style>
     <figure class="video_container">
