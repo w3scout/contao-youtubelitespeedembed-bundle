@@ -35,7 +35,7 @@
             {% if autoload is not empty %}
             autoload
             {% endif %}
-            {% if params is defined and not empty %}
+            {% if params is defined and params is not empty %}
             {{ params }}
             {% endif %}
         >
