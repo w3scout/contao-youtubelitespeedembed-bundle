@@ -14,6 +14,9 @@ declare(strict_types=1);
 
 namespace W3Scout\ContaoYoutubelitespeedembedBundle\ContaoManager;
 
+use Contao\CalendarBundle\ContaoCalendarBundle;
+use Contao\FaqBundle\ContaoFaqBundle;
+use Contao\NewsBundle\ContaoNewsBundle;
 use W3Scout\ContaoYoutubelitespeedembedBundle\W3ScoutContaoYoutubelitespeedembedBundle;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
@@ -29,7 +32,8 @@ class Plugin implements BundlePluginInterface
     {
         return [
             BundleConfig::create(W3ScoutContaoYoutubelitespeedembedBundle::class)
-                ->setLoadAfter([ContaoCoreBundle::class]),
+                ->setLoadAfter([ContaoCoreBundle::class, ContaoNewsBundle::class, ContaoCalendarBundle::class, ContaoFaqBundle::class])
+
         ];
     }
 }
