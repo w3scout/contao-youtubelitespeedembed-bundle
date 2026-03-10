@@ -125,7 +125,7 @@ class YoutubeLiteSpeedEmbedController extends AbstractContentElementController
         if (!empty($params))
         {
             $url .= '?' . implode('&amp;', $params);
-            $template->params = sprintf('params="%s"', implode('&', $params));
+            $template->params = sprintf('params=%s', implode('&', $params));
         }
 
         $template->src = $url;
